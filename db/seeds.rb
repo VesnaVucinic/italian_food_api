@@ -14,3 +14,6 @@ dish3 = Dish.create(name: "Pizza Franco Manca 6", image_url: "https://www.google
 order1 = Order.create(data: DateTime.new(2020,11,25), user_id: vesna.id, status: "finished", total: 7.95)
 order2 =Order.create(data: DateTime.new(2020,12,22), user_id: vesna.id, status: "submitted", total: 6.80)
 
+order_dish1 = OrderDish.create(order_id: order1.id, dish_id: dish1.id)
+order_dish2 = OrderDish.create(order_id: order2.id, dish_id: dish2.id)
+
