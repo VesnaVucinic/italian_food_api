@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   end 
 
+  post '/api/v1/signup', to: "api/v1/users#create"  
   post "/api/v1/login", to: "api/v1/sessions#login"
   get '/api/v1/auto-login', to: "api/v1/sessions#auto_login"
 end
