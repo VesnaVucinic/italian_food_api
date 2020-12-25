@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Dish.destroy_all
+Order.destroy_all
+OrderDish.destroy_all
+
 vesna = User.create(first_name: "Vesna", last_name: "Vucinic", email: "vesna@vesna.com", password: "vv")
 
 dish1 = Dish.create(name: "Pizza Franco Manca 4", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR71sWsTaJ3XlktEDmZKb1ENOhhpwXwRgyraQ&usqp=CAU", description: "Roasted cured ham, British mozzarella, ricotta & wild mushrooms, [little tomato]", price: 7.95 )
