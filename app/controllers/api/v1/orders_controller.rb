@@ -10,6 +10,22 @@ class Api::V1::OrdersController < ApplicationController
         render json: order
     end
 
+    def create
+        order = @user.orders.new
+        order.date = DateTime.now
+        order.status = "submitted"
+        order.total = order_params[:total]
+        order_params[:dishes].each do |d|
+            dish = Dish.find_by name: d[:name]
+            order.dishes.push(dish)
+        end
+        if order.save
+            render json: order
+        else
+            render json: {error: "Error creating orders."}
+        end
+    end
+
     private
 
     def set_user
