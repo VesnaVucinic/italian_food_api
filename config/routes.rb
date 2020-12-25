@@ -7,4 +7,7 @@ Rails.application.routes.draw do
       resources :dishes
     end
   end 
+
+  post "/api/v1/login", to: "api/v1/sessions#login"
+  get '/api/v1/auto-login', to: "api/v1/sessions#auto_login"
 end
